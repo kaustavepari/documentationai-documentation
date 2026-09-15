@@ -1,0 +1,72 @@
+---
+title: "Install the Cloud Platform CLI"
+description: "Set up the CLI tool to manage deployments from your terminal"
+---
+
+## Install the Cloud Platform CLI
+
+The Cloud Platform CLI lets you deploy, scale, and manage applications from your terminal.
+
+<Callout kind="alert">
+
+**Prerequisites**
+
+- Node.js 18 or later
+- A Cloud Platform account
+
+</Callout>
+
+## Install via Package Manager
+
+<CodeGroup tabs="npm,yarn">
+
+```bash
+npm install -g @cloud-platform/cli
+```
+
+```bash
+yarn global add @cloud-platform/cli
+```
+
+</CodeGroup>
+
+## Verify Installation
+
+```bash
+$ cloud --version
+1.4.2
+```
+
+## Next Steps
+
+<Steps>
+  <Step title="Install CLI" icon="terminal" title-type="p">
+    Run the install command above for your package manager.
+  </Step>
+
+  <Step title="Authenticate" icon="lock" title-type="p">
+    Log in with `cloud login` and follow the browser prompt.
+  </Step>
+
+  <Step title="Create Your First Project" icon="rocket" title-type="p">
+    Run `cloud init` to scaffold a new deployment.
+  </Step>
+</Steps>
+
+## Resources
+
+<Columns cols="2">
+
+<Card title="API Authentication" href="/cloud-platform/v1/en/api/auth" icon="lock">
+
+Learn how to secure your API calls.
+
+</Card>
+
+<Card title="v2 Migration Guide" href="/cloud-platform/v2/en/guides/migration" icon="arrow-up-circle">
+
+Planning an upgrade to v2?
+
+</Card>
+
+</Columns>

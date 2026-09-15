@@ -1,0 +1,78 @@
+---
+title: "Migrate from v1 to v2"
+description: "Upgrade your Cloud Platform deployment from v1 to v2 with minimal downtime"
+---
+
+## Migrate from v1 to v2
+
+Cloud Platform v2 introduces a new deployment engine, improved auto-scaling, and enhanced observability. This guide walks you through migrating existing v1 projects to v2.
+
+## What Changed in v2
+
+<Columns cols="2">
+
+<Card title="New Deploy Engine" href="/cloud-platform/v2/en/guides/migration" icon="cpu">
+
+Faster cold starts and zero-downtime deploys.
+
+</Card>
+
+<Card title="Improved Auto-Scaling" href="/cloud-platform/v2/en/guides/migration" icon="trending-up">
+
+Predictive scaling based on historical traffic patterns.
+
+</Card>
+
+<Card title="Enhanced Observability" href="/cloud-platform/v2/en/guides/migration" icon="eye">
+
+Built-in tracing, metrics, and log aggregation.
+
+</Card>
+
+<Card title="Simplified Config" href="/cloud-platform/v2/en/guides/migration" icon="settings">
+
+Single `cloud.yaml` replaces multiple config files.
+
+</Card>
+
+</Columns>
+
+## Migration Steps
+
+<Steps>
+
+<Step title="Audit Your v1 Projects" icon="search">
+
+Run `cloud audit --version v1` to list all projects and their current config.
+
+</Step>
+
+<Step title="Update the CLI" icon="terminal">
+
+Install the v2 CLI: `npm install -g @cloud-platform/cli@2`.
+
+</Step>
+
+<Step title="Migrate Config Files" icon="file-text">
+
+Run `cloud migrate-config` to convert v1 configs to `cloud.yaml`.
+
+</Step>
+
+<Step title="Deploy to v2" icon="rocket">
+
+Run `cloud deploy --target v2` and verify your application is live.
+
+</Step>
+
+</Steps>
+
+<Callout kind="alert">
+
+v1 projects continue to run during migration. You can roll back to v1 at any time by running `cloud deploy --target v1`.
+
+</Callout>
+
+## Need Help
+
+Refer to the [v1 Overview](/cloud-platform/v1/en/guides/overview) for v1-specific documentation.

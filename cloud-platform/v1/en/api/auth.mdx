@@ -1,0 +1,71 @@
+---
+title: "Authenticate API Requests"
+description: "Secure your Cloud Platform API calls with bearer tokens"
+---
+
+## Authentication
+
+Cloud Platform API uses bearer tokens for authentication. Every request must include a valid token in the `Authorization` header.
+
+## Obtain an API Key
+
+<Steps>
+<Step title="Navigate to Settings → API Keys" icon="settings">
+
+Open the Cloud Platform dashboard and go to Settings, then API Keys.
+
+</Step>
+
+<Step title="Generate a New Key" icon="key">
+
+Click "Generate New Key", name it, and copy the token immediately.
+
+</Step>
+</Steps>
+
+<Callout kind="alert">
+
+Never commit API keys to version control. Use environment variables to manage tokens securely.
+
+</Callout>
+
+## Request Format
+
+Use your bearer token in the `Authorization` header for every API request.
+
+<CodeGroup tabs="cURL,Node.js">
+
+```bash
+curl -H "Authorization: Bearer dkai_example_9xmk7q2r" https://api.cloud-platform.io/v1/projects
+```
+
+```javascript
+const response = await fetch("https://api.cloud-platform.io/v1/projects", {
+  headers: {
+    Authorization: "Bearer dkai_example_9xmk7q2r",
+  },
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+</CodeGroup>
+
+## Response
+
+```json
+{
+  "status": "ok",
+  "projects": [
+    {
+      "id": "prj_abc",
+      "name": "my-app"
+    }
+  ]
+}
+```
+
+## Next Steps
+
+Set up the CLI with the [Installation Guide](/cloud-platform/v1/en/guides/installation).

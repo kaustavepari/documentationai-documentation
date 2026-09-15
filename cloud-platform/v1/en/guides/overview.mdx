@@ -1,0 +1,44 @@
+---
+title: Get Started with Cloud Platform
+description: Learn what Cloud Platform is and how it fits into your infrastructure
+---
+
+## Get started with Cloud Platform
+
+Cloud Platform is a scalable deployment platform for modern web applications. Deploy applications across regions, scale them as traffic changes, and rely on managed security controls built into the platform.
+
+## Core Capabilities
+
+<Columns cols="3">
+
+<Card title="Deploy Anywhere" href="/cloud-platform/v1/en/guides/installation" icon="globe">
+
+Push to any region with a single command.
+
+</Card>
+
+<Card title="Auto-Scaling" href="#core-capabilities" icon="scale">
+
+Traffic spikes handled automatically with horizontal scaling.
+
+</Card>
+
+<Card title="Managed Security" href="/cloud-platform/v1/en/api/auth" icon="shield">
+
+Built-in TLS, WAF, and DDoS protection.
+
+</Card>
+
+</Columns>
+
+## Quick Architecture
+
+Cloud Platform routes requests through an edge network before they reach your application tier. The edge network handles global traffic distribution and helps reduce latency for users in different regions.
+
+Your application tier connects to a managed database, which handles persistence without requiring you to operate database infrastructure directly. This separation lets you scale application capacity independently from data storage.
+
+<Callout kind="alert">
+
+Cloud Platform v1 is the legacy version. [Cloud Platform v2 is now available](/cloud-platform/v2/en/guides/migration), with migration guidance for existing v1 deployments.
+
+</Callout>
