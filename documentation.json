@@ -22,10 +22,6 @@
                 "icon": "rocket",
                 "pages": [
                   {
-                    "title": "QUARZ Betriebswerte DAI470 Test",
-                    "path": "quarz-betriebswerte-dai470-test"
-                  },
-                  {
                     "title": "Introduction",
                     "path": "introduction",
                     "icon": "home"
