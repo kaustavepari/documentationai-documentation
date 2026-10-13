@@ -29,8 +29,7 @@
                   {
                     "title": "Quickstart",
                     "path": "quickstart",
-                    "icon": "zap",
-                    "show-footer": false
+                    "icon": "zap"
                   },
                   {
                     "title": "Components",
@@ -227,38 +226,79 @@
                 "footer": {
                   "columns": [
                     {
-                      "title": "Recursos",
+                      "title": "Producto",
                       "links": [
                         {
-                          "title": "Status",
-                          "link": "https://status.documentation.ai"
+                          "title": "Resumen",
+                          "link": "cloud-platform/v1/es/guides/overview"
                         },
                         {
-                          "title": "Email support",
-                          "link": "mailto:support@example.com"
+                          "title": "Estado",
+                          "link": "https://status.example.com"
                         }
                       ]
                     },
                     {
-                      "title": "Aviso legal",
+                      "title": "Recursos",
                       "links": [
                         {
-                          "title": "Privacy Policy",
-                          "link": "privacy"
+                          "title": "Blog",
+                          "link": "https://example.com/es/blog"
                         },
                         {
-                          "title": "Imprint",
-                          "link": ""
+                          "title": "Comunidad",
+                          "link": "https://example.com/es/comunidad"
+                        },
+                        {
+                          "title": "Soporte",
+                          "link": "mailto:soporte@example.com"
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Empresa",
+                      "links": [
+                        {
+                          "title": "Acerca de",
+                          "link": "https://example.com/es/acerca"
+                        },
+                        {
+                          "title": "Empleo",
+                          "link": "https://example.com/es/empleo"
+                        },
+                        {
+                          "title": "Contacto",
+                          "link": "https://example.com/es/contacto"
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Legal",
+                      "links": [
+                        {
+                          "title": "Privacidad",
+                          "link": "https://example.com/es/privacidad"
+                        },
+                        {
+                          "title": "Términos",
+                          "link": "https://example.com/es/terminos"
+                        },
+                        {
+                          "title": "Aviso legal",
+                          "link": "https://example.com/es/aviso-legal"
                         }
                       ]
                     }
                   ],
                   "socials": {
-                    "github": "github.com/documentation-ai",
-                    "x": "https://x.com/documentationai",
-                    "discord": ""
+                    "x": "https://x.com/example",
+                    "github": "https://github.com/example",
+                    "linkedin": "https://www.linkedin.com/company/example",
+                    "discord": "https://discord.gg/example",
+                    "youtube": "https://www.youtube.com/@example",
+                    "slack": "https://example.slack.com"
                   },
-                  "copyright": "© 2026 Prueba S.A.\nTodos los derechos reservados."
+                  "copyright": "© 2026 Starter Kit, S.L. Todos los derechos reservados."
                 }
               }
             ]
@@ -300,15 +340,61 @@
   "footer": {
     "columns": [
       {
+        "title": "Product",
+        "links": [
+          {
+            "title": "Overview",
+            "link": "introduction"
+          },
+          {
+            "title": "Quickstart",
+            "link": "quickstart"
+          },
+          {
+            "title": "Changelog",
+            "link": "changelog"
+          },
+          {
+            "title": "Status",
+            "link": "https://status.example.com"
+          }
+        ]
+      },
+      {
         "title": "Resources",
         "links": [
           {
-            "title": "Status",
-            "link": "https://status.documentation.ai"
+            "title": "Guides",
+            "link": "help-center/guides/setup-project"
           },
           {
-            "title": "Email support",
+            "title": "Blog",
+            "link": "https://example.com/blog"
+          },
+          {
+            "title": "Community",
+            "link": "https://example.com/community"
+          },
+          {
+            "title": "Support",
             "link": "mailto:support@example.com"
+          }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          {
+            "title": "About",
+            "link": "https://example.com/about"
+          },
+          {
+            "title": "Careers",
+            "link": "https://example.com/careers"
+          },
+          {
+            "title": "Contact",
+            "link": "https://example.com/contact"
           }
         ]
       },
@@ -317,21 +403,32 @@
         "links": [
           {
             "title": "Privacy Policy",
-            "link": "privacy"
+            "link": "https://example.com/privacy"
+          },
+          {
+            "title": "Terms of Service",
+            "link": "https://example.com/terms"
+          },
+          {
+            "title": "Security",
+            "link": "https://example.com/security"
           },
           {
             "title": "Imprint",
-            "link": ""
+            "link": "https://example.com/imprint"
           }
         ]
       }
     ],
     "socials": {
-      "github": "github.com/documentation-ai",
-      "x": "https://x.com/documentationai",
-      "discord": ""
+      "x": "https://x.com/example",
+      "github": "https://github.com/example",
+      "linkedin": "https://www.linkedin.com/company/example",
+      "discord": "https://discord.gg/example",
+      "youtube": "https://www.youtube.com/@example",
+      "slack": "https://example.slack.com"
     },
-    "copyright": "© 2026 Footer Test Inc.\nAll rights reserved."
+    "copyright": "© 2026 Starter Kit, Inc. All rights reserved."
   },
   "template": "atlas"
 }
