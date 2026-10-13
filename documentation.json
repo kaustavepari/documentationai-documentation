@@ -264,5 +264,10 @@
   },
   "sidebar": {
     "wrap": false
+  },
+  "errors": {
+    "404": {
+      "page": "404"
+    }
   }
 }
