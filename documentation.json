@@ -29,7 +29,8 @@
                   {
                     "title": "Quickstart",
                     "path": "quickstart",
-                    "icon": "zap"
+                    "icon": "zap",
+                    "show-footer": false
                   },
                   {
                     "title": "Components",
@@ -222,7 +223,43 @@
                       }
                     ]
                   }
-                ]
+                ],
+                "footer": {
+                  "columns": [
+                    {
+                      "title": "Recursos",
+                      "links": [
+                        {
+                          "title": "Status",
+                          "link": "https://status.documentation.ai"
+                        },
+                        {
+                          "title": "Email support",
+                          "link": "mailto:support@example.com"
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Aviso legal",
+                      "links": [
+                        {
+                          "title": "Privacy Policy",
+                          "link": "privacy"
+                        },
+                        {
+                          "title": "Imprint",
+                          "link": ""
+                        }
+                      ]
+                    }
+                  ],
+                  "socials": {
+                    "github": "github.com/documentation-ai",
+                    "x": "https://x.com/documentationai",
+                    "discord": ""
+                  },
+                  "copyright": "© 2026 Prueba S.A.\nTodos los derechos reservados."
+                }
               }
             ]
           },
@@ -259,5 +296,41 @@
   },
   "sidebar": {
     "wrap": false
+  },
+  "footer": {
+    "columns": [
+      {
+        "title": "Resources",
+        "links": [
+          {
+            "title": "Status",
+            "link": "https://status.documentation.ai"
+          },
+          {
+            "title": "Email support",
+            "link": "mailto:support@example.com"
+          }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+          {
+            "title": "Privacy Policy",
+            "link": "privacy"
+          },
+          {
+            "title": "Imprint",
+            "link": ""
+          }
+        ]
+      }
+    ],
+    "socials": {
+      "github": "github.com/documentation-ai",
+      "x": "https://x.com/documentationai",
+      "discord": ""
+    },
+    "copyright": "© 2026 Footer Test Inc.\nAll rights reserved."
   }
 }
