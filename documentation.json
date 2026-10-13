@@ -259,10 +259,5 @@
   },
   "sidebar": {
     "wrap": false
-  },
-  "errors": {
-    "404": {
-      "page": "components/tabs"
-    }
   }
 }
