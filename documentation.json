@@ -430,8 +430,5 @@
     },
     "copyright": "© 2026 Starter Kit, Inc. All rights reserved."
   },
-  "template": "atlas",
-  "errors": {
-    "404": "page-not-found"
-  }
+  "template": "atlas"
 }
