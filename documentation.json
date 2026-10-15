@@ -343,18 +343,17 @@
         "title": "Product",
         "links": [
           {
-            "title": "Overview",
-            "link": "introduction",
+            "title": "Introduction",
+            "link": "/introduction",
             "translations": {
               "es": {
-                "title": "Resumen",
-                "link": "cloud-platform/v1/es/guides/overview"
+                "title": "Introducción"
               }
             }
           },
           {
             "title": "Quickstart",
-            "link": "quickstart",
+            "link": "/quickstart",
             "translations": {
               "es": {
                 "title": "Inicio rápido"
@@ -362,11 +361,58 @@
             }
           },
           {
+            "title": "Concepts",
+            "link": "/concepts",
+            "translations": {
+              "es": {
+                "title": "Conceptos"
+              }
+            }
+          },
+          {
             "title": "Changelog",
-            "link": "changelog",
+            "link": "/changelog",
             "translations": {
               "es": {
                 "title": "Novedades"
+              }
+            }
+          }
+        ],
+        "translations": {
+          "es": {
+            "title": "Producto"
+          }
+        }
+      },
+      {
+        "title": "Developers",
+        "links": [
+          {
+            "title": "Authentication",
+            "link": "/authentication",
+            "translations": {
+              "es": {
+                "title": "Autenticación"
+              }
+            }
+          },
+          {
+            "title": "Components",
+            "link": "/components",
+            "translations": {
+              "es": {
+                "title": "Componentes"
+              }
+            }
+          },
+          {
+            "title": "Cloud Platform",
+            "link": "/cloud-platform/v1/en/guides/overview",
+            "translations": {
+              "es": {
+                "title": "Plataforma en la nube",
+                "link": "/cloud-platform/v1/es/guides/overview"
               }
             }
           },
@@ -382,56 +428,44 @@
         ],
         "translations": {
           "es": {
-            "title": "Producto"
+            "title": "Desarrolladores"
           }
         }
       },
       {
-        "title": "Resources",
+        "title": "Support",
         "links": [
           {
-            "title": "Guides",
-            "link": "help-center/guides/setup-project",
+            "title": "FAQ",
+            "link": "/help-center/faq/getting-started",
             "translations": {
               "es": {
-                "title": "Guías"
+                "title": "Preguntas frecuentes"
               }
             }
           },
           {
-            "title": "Blog",
-            "link": "https://example.com/blog",
+            "title": "Troubleshooting",
+            "link": "/help-center/troubleshooting/install-error",
             "translations": {
               "es": {
-                "title": "Blog",
-                "link": "https://example.com/es/blog"
+                "title": "Solución de problemas"
               }
             }
           },
           {
-            "title": "Community",
-            "link": "https://example.com/community",
-            "translations": {
-              "es": {
-                "title": "Comunidad",
-                "link": "https://example.com/es/comunidad"
-              }
-            }
-          },
-          {
-            "title": "Support",
+            "title": "Contact support",
             "link": "mailto:support@example.com",
             "translations": {
               "es": {
-                "title": "Soporte",
-                "link": "mailto:soporte@example.com"
+                "title": "Contactar con soporte"
               }
             }
           }
         ],
         "translations": {
           "es": {
-            "title": "Recursos"
+            "title": "Soporte"
           }
         }
       },
@@ -444,27 +478,30 @@
             "translations": {
               "es": {
                 "title": "Acerca de",
-                "link": "https://example.com/es/acerca"
+                "link": "https://example.com/es/about"
               }
             }
+          },
+          {
+            "title": "Blog",
+            "link": "https://example.com/blog"
           },
           {
             "title": "Careers",
             "link": "https://example.com/careers",
             "translations": {
               "es": {
-                "title": "Empleo",
-                "link": "https://example.com/es/empleo"
+                "title": "Empleo"
               }
             }
           },
           {
-            "title": "Contact",
-            "link": "https://example.com/contact",
+            "title": "Privacy policy",
+            "link": "https://example.com/privacy",
             "translations": {
               "es": {
-                "title": "Contacto",
-                "link": "https://example.com/es/contacto"
+                "title": "Política de privacidad",
+                "link": "https://example.com/es/privacy"
               }
             }
           }
@@ -474,50 +511,6 @@
             "title": "Empresa"
           }
         }
-      },
-      {
-        "title": "Legal",
-        "links": [
-          {
-            "title": "Privacy Policy",
-            "link": "https://example.com/privacy",
-            "translations": {
-              "es": {
-                "title": "Privacidad",
-                "link": "https://example.com/es/privacidad"
-              }
-            }
-          },
-          {
-            "title": "Terms of Service",
-            "link": "https://example.com/terms",
-            "translations": {
-              "es": {
-                "title": "Términos",
-                "link": "https://example.com/es/terminos"
-              }
-            }
-          },
-          {
-            "title": "Security",
-            "link": "https://example.com/security",
-            "translations": {
-              "es": {
-                "title": "Seguridad"
-              }
-            }
-          },
-          {
-            "title": "Imprint",
-            "link": "https://example.com/imprint",
-            "translations": {
-              "es": {
-                "title": "Aviso legal",
-                "link": "https://example.com/es/aviso-legal"
-              }
-            }
-          }
-        ]
       }
     ],
     "socials": {
@@ -531,7 +524,11 @@
     "copyright": "© 2026 Starter Kit, Inc. All rights reserved.",
     "translations": {
       "es": {
-        "copyright": "© 2026 Starter Kit, S.L. Todos los derechos reservados."
+        "copyright": "© 2026 Starter Kit, S.L. Todos los derechos reservados.",
+        "socials": {
+          "x": "https://x.com/example_es",
+          "youtube": "https://www.youtube.com/@example_es"
+        }
       }
     }
   },
