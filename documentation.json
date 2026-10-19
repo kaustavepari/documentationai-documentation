@@ -156,7 +156,11 @@
             "title": "introduction of second product",
             "path": "introduction-of-second-product"
           }
-        ]
+        ],
+        "banner": {
+          "content": "Login is failing for some users. [Status page](https://status.acme.com)",
+          "type": "danger"
+        }
       },
       {
         "product": "Cloud Platform",
@@ -299,6 +303,10 @@
                     "slack": "https://example.slack.com"
                   },
                   "copyright": "© 2026 Starter Kit, S.L. Todos los derechos reservados."
+                },
+                "banner": {
+                  "content": "La versión 1 dejará de recibir soporte en marzo. [Migrar a v2](/v2/migration)",
+                  "type": "alert"
                 }
               }
             ]
@@ -532,5 +540,11 @@
       }
     }
   },
-  "template": "atlas"
+  "template": "atlas",
+  "banner": {
+    "content": "Version 6.2 is out with **faster search**. [See what's new](/changelog)"
+  },
+  "errors": {
+    "404": "page-not-found"
+  }
 }
