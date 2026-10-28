@@ -73,6 +73,19 @@
                 "group": "AlgoShack checks",
                 "pages": [
                   {
+                    "title": "Raw angle brackets",
+                    "path": "raw-angle-brackets"
+                  },
+                  {
+                    "title": "Execution of algoQA-generated Test Scripts in TestComplete and Viewing the Report",
+                    "path": "automation-by-application/desktop-app-test-automation/execution-of-algoqa-generated-scripts-in-testcomplete/execution-of-algoqa-generated-test-scripts-in-testcomplete-and-viewing-the-report"
+                  },
+                  {
+                    "title": "Editor checks",
+                    "path": "editor-checks-renamed",
+                    "badge": "Beta"
+                  },
+                  {
                     "title": "Descriptions",
                     "path": "descriptions"
                   },
