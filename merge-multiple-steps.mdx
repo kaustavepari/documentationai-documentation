@@ -1,0 +1,119 @@
+---
+title: Merge Multiple Steps to One
+---
+Modified on Wed, 29 Jul at 3:28 PM
+
+## 1. Overview
+
+This document provides detailed information on Merge Multiple Steps feature and how to use Merge Multiple Steps feature to merge Scenario Steps.
+
+<Callout kind="info" collapsed="false">
+  Note: The Merge Multiple Steps into One Feature option is supported for Web automation using Java Selenium and Python Selenium, and for Desktop automation using the C# WinAppDriver framework.
+</Callout>
+
+## 2. How Merging Multiple Steps Works
+
+Merging steps means combining two or more separate steps into a single, more efficient. This is done to:
+
+- Simplify processes
+- Reduce time or complexity
+
+## 3. How To Use Merge Multiple Steps Feature
+
+Firstly there are 2 types of merge, inline and dataset merge, To merge steps within the scenario, click the Edit icon next to the recorded scenario to view the Scenario Steps list. Then, click the Select Steps button to enable the checkboxes beside each step. Select the steps you want to merge, and click Merge Steps button.
+
+<Image src="https://s3-ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/1070044052211/original/1_VA4t4gwSZg57YH8l_WNSryxkULKC0M2A.png?1781527359" width="1557" height="606" alt="Scenario Steps list with Select Steps and Merge Steps buttons" />
+
+<Callout kind="info" collapsed="false">
+  Note: After selecting Select Steps, you can use Master Select to select all steps at once. However, deleting all steps is not allowed because at least one step is required in the scenario steps list, so the delete icon will be disabled. If you unselect one step and then click the delete icon, a confirmation pop-up will appear asking “Do you want to delete multiple scenario steps?”. Click OK to delete the selected steps at once.
+</Callout>
+
+### 3.1 Inline Merge
+
+A pop-up will appear prompting you to choose between Inline Merge and Dataset Merge. Select Inline Merge, then click Manual Merge to proceed.
+
+<Image src="https://s3-ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/1070044052842/original/JzBNhZETeY-DEClvOlb1lx-0WnVizRtnDA.png?1781527843" width="285" height="195" alt="Inline Merge and Dataset Merge options" />
+
+A pop-up will appear showing the selected steps. You can either click Create Custom Method to create a new custom method for these steps or choose Use Existing Method to apply an existing custom action.
+
+<Image src="https://s3-ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/1070044052940/original/CV6UainrJGIwtWjRbbfnfd3tCOtH1BkRZA.png?1781527897" width="1335" height="654" alt="Selected steps with Create Custom Method and Use Existing Method options" />
+
+<Callout kind="info" collapsed="false">
+  Note: A Verify action cannot be the first step in the scenario steps list. If you attempt to merge steps where a Verify action is first, a warning message will be displayed. Additionally, if there are multiple Verify actions among the selected steps, those steps cannot be merged.
+</Callout>
+
+### 1. How to create a new custom method in merge multiple steps
+
+Select Create Custom Method. In the File Name will be filled automatically based on the selected language. You can either choose an existing file from the dropdown or create a new one. Then Action Name, Method Name, and Description will be filled automatically, you can also edit them and click Submit to save the custom method.
+
+<Image src="https://s3-ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/1070044053392/original/LSOX6_W7xSLbRscKGcy5u7ayO-JDbcwR5w.png?1781528257" width="1332" height="650" alt="Create Custom Method form with file, action, method, and description fields" />
+
+A pop-up will appear confirming that the method has been successfully created with the selected steps and method details. Alias name will be filled automatically in Alias Step field and there will also be suggestions available for you to choose, then click Merge Steps. The selected steps will be merged into a single step, which will be displayed in green.
+
+<Image src="https://s3-ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/1070030630891/original/ejfHL61PXC0AoAbiNq6et5OOYyLvK-8iQA.png?1758795932" width="1316" height="699" alt="Merged step displayed in green with alias step details" />
+
+<Callout kind="info" collapsed="false">
+  Note: The method will also be created under Utilities. If you try to edit a step that has been merged, and attempt to change its default or custom action, a pop-up will appear stating:
+
+  "Changing Default/Custom Action will update all alias steps that currently use the existing action in the merged step."
+</Callout>
+
+### 2. How to use existing method in merge multiple steps
+
+Click on Use Existing Method. The Create Custom Method pop-up will appear. In the Method Name field, select a suitable method from the dropdown to merge the selected steps. The method details will be displayed. Click Submit.
+
+<Image src="https://s3-ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/1070044053467/original/NCzAiZBVOD0fk0PVhnPc9Ax0jU3lWgYH8A.png?1781528323" width="1328" height="627" alt="Create Custom Method pop-up with the Method Name dropdown" />
+
+A pop-up will appear confirming that the method has been successfully created with the selected steps and method details. Alias name will be filled automatically in Alias Step field and there will also be suggestions available for you to choose, then click Merge Steps. The selected steps will be merged into a single step, which will be displayed in green.
+
+<Image src="https://s3-ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/1070044053529/original/YyM5KRzOF1aUswd_YECqwElYfGyeBFvRmg.png?1781528403" width="1332" height="657" alt="Existing method applied to selected steps and merged step displayed in green" />
+
+<Image src="https://s3-ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/1070044053558/original/dut95tHoD1-DBK-GIawYd8xL9S5VIn37LQ.png?1781528436" width="1551" height="741" alt="Merged step and alias step details" />
+
+By clicking the down arrow next to a merged step, you can view the individual steps that were combined to create the current merged step. These steps can be edited, deleted, added and changes will be automatically applied to that custom action.
+
+<Image src="https://s3-ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/1070044053778/original/67mrHb4YsdrXJ_8MR15yJHxS6OTNrG01-g.png?1781528538" width="1550" height="446" alt="Expanded merged step showing the individual combined steps" />
+
+### 3.2 Dataset Merge
+
+To merge steps, first ensure that Dataset is enabled for the scenario by selecting the Dataset checkbox. Next, click the Edit icon for the recorded scenario to open the Scenario Steps list. Click Select Steps to display checkboxes beside each step, select the steps you want to merge, and then click Merge Steps.
+
+A pop-up will appear prompting you to choose between Inline Merge and Dataset Merge. Select Dataset Merge, then click Manual Merge to proceed with the merge operation.
+
+<Image src="https://s3-ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/1070044108067/original/5q1UpBvNF9epD9TV0ZGEeSLdSgvlkG7F_A.png?1781608757" width="282" height="198" alt="Dataset Merge option in the merge selection pop-up" />
+
+To merge steps by creating a new custom method, follow Step 1 in Section 3.1. To merge steps using an existing method, follow Step 2 in Section 3.2.
+
+<Callout kind="info" collapsed="false">
+  Note: If you attempt to reorder merged steps within the scenario steps, a notification will appear indicating that reordering may affect the data sequence. Please review the changes carefully before proceeding.
+</Callout>
+
+<Image src="https://s3-ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/1070044146632/original/vNDmFzO8TPOFtD8TdTEzb4AN4XPFdkKu3g.png?1781679318" width="1624" height="885" alt="Notification about reordering merged steps and data sequence" />
+
+Navigate back to the Scenario List, click the More Options (⋮) icon, and then select the Edit icon besides dataset.
+
+<Image src="https://s3-ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/1070044147630/original/WyV3S71-YKEP38JC8Aa7DNctZbETj9MdhQ.png?1781679870" width="351" height="378" alt="Scenario List with More Options and dataset Edit icons" />
+
+You can view the available datasets and make any necessary modifications if required.
+
+<Image src="https://s3-ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/1070044147813/original/_dW4YxD2OYmphcxKWosYB2iRR1Vdts2y2g.png?1781680009" width="1545" height="270" alt="Available datasets and dataset modification view" />
+
+## 4. Limitations
+
+1. Merge Steps functionality is currently supported only for Java Selenium and Python Selenium frameworks.
+2. Once steps are merged, there is no option to undo or revert the merge operation.
+3. Changes made in the configuration, such as Control Name, Control Type, or Default Action, are not reflected in the alias steps within a merged step, and vice versa.
+4. When merging steps in another scenario, if the same set of steps has already been merged in an existing scenario, the system compares attributes such as step sequence, custom/control values, and associated actions. If an exact match is found, the system suggests reusing the existing alias step.
+5. Any edits made to a merged step are automatically reflected in all scenarios that use the same merged step within the selected setup file.
+6. If a step is deleted from a merged step, the corresponding data is not automatically updated in the dataset sheet.
+7. After merging steps, if a user modifies the custom values or control values in the scenario, those changes are not automatically synchronized with the dataset. The dataset must be updated manually.
+8. Reordering scenario steps after merging does not update the sequence in the dataset sheet. Users must either manually update the sequence and indexing or delete and regenerate the dataset.
+9. If the same step is used multiple times within a scenario and is also part of a merged step, the dataset indexing may become incorrect. In such cases, it is recommended to manually adjust the indexing or regenerate the dataset.
+10. Steps containing inline parameters in the Test Step Settings cannot be merged.
+11. If a merged step contains a Custom Action, Auto Healing is not supported for that step, and execution may fail.
+12. Minimum of 2 steps is required and only 5 steps can be merged at a time.
+
+<Callout kind="info" collapsed="false">
+  Note: You can also create Custom Actions from Action List, To know more about custom actions check this article [Using Custom Actions](https://algoshack-support.freshdesk.com/support/solutions/articles/1070000050601-using-custom-actions)
+</Callout>
+

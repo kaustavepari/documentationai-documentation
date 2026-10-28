@@ -1,0 +1,46 @@
+---
+title: Test Step Settings Feature
+---
+
+Modified on Wed, 29 Jul at 2:55 PM
+
+## 1. Overview
+
+Test Step Settings refer to a set of configurable parameters that define how each test step is executed. These settings allow the user to customize various aspects of the test step by selecting options from a dropdown list to control specific behaviors.
+
+You can access TestStep Settings drop down list in Edit step while editing a scenario.
+
+Navigate to the Scenario List > Scenario Steps List > choose the particular step you wish to edit by clicking the edit icon of the corresponding step and click Show More Options to view TestStep Settings
+
+## 2. Using Test Step Settings
+
+The following table provides each parameter usage:
+
+<Callout kind="info" collapsed="false">
+
+Note: If you select Textbox, Textarea, or Dropdown List as the control type in algoScraper for a verification action and the corresponding control values are unavailable, select the Avoid Param option in the Test Step Settings field in algoQA.
+
+The scraper maps the captured control types to the appropriate verification actions:  
+Checkbox, Radio Button → Verify Checked / Verify Unchecked  
+Dropdown, Textarea, Image → Verify Displayed  
+Textbox, Link, Button, Label → Verify Text
+
+</Callout>
+
+| **Parameter** | **Description** |
+| --- | --- |
+| `avoid data generation` | When the “Avoid Data Generation” option is enabled for a test step, the system will skip data generation for that specific step. |
+| `avoid multiple combination` | Choose this option to avoid generating multiple combinations. For more information, see [**Accented Character Test Data Issue.**](https://algoshack-support.freshdesk.com/support/solutions/articles/1070000077532-accented-character-test-data-issue) |
+| `avoid combination` | Choose this option if you wish to avoid the combinations. |
+| `auto (optional )` | Supported for earlier versions. |
+| `avoid param` | Choose this option to avoid displaying the parameter or test data which is configured for a particular UI element during the node configuration. The test data is not generated in the example table in the generated Feature File. |
+| `avoid inline` | Choose this option to avoid custom value  provided for a particular UI element in a step in the Edit Scenario secondary screen  or parameter provided during node configuration. |
+| `correct value in between` | When a “Correct Value In Between” is configured in the test step settings for a specific control, the system correctly generates the expected valid value within the negative data set for that control. |
+| `Customize feature` | Choose this option if you don't want the feature name to be generated in a particular scenario step. For example, if you don't want the feature name which is sensitive to be displayed |
+| `Customize control` | Choose this option if you don't want UI element name to be generated in a particular scenario step. |
+| `inlineWithoutTestData` | Choose this option if you want to add a control value or custom value directly in the step, rather than in the test data file. |
+| `no precondition` | Choose this option if you don't want to generate given line in the generated Feature File |
+| `no post condition` | Choose this option if you don't want to generate line which is printed after the Then step and wish to generate the customizable message. |
+| `param` |  |
+| `split lrs test case` |  |
+| `GWT - given` | Choose this option from the drop down list for a particular step and provide Given input then. In the generated Feature File, you can see the input text for that particular step. |

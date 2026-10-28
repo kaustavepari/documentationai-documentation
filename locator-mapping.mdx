@@ -1,0 +1,92 @@
+---
+title: Locator Mapping
+description: >-
+  Update and replace locators for UI elements in the algoQA Object Repository
+  when application changes make existing locators ineffective.
+---
+Modified on Wed, 29 Jul at 11:11 AM
+
+## 1. XPath Overview
+
+XPath is defined as XML path. It is a syntax for finding UI elements on a web page using the XML path expression, commonly known as a locator.
+
+### 1.1 Syntax for XPath
+
+XPath contains the path of the element situated on the web page. The standard syntax for creating XPath is as follows:
+
+```text
+XPath=//tagname[@attribute='value']
+```
+
+This expression is used to identify an element based on its tag name and a specific attribute-value pair. For more information, refer to the [article on the Perfecto blog](https://www.perfecto.io/blog/xpath-in-selenium).
+
+<Callout kind="info" collapsed="false">
+  Note: In the automation workflow, it's essential to balance the use of both relative and absolute XPaths. However, it is recommended to use relative paths for ease of maintenance.
+</Callout>
+
+## 2. Locator Mapping
+
+Locator Mapping is a functionality that allows users to manage and update locators, associated with UI elements in an application. When there is a change in the application or if a locator is no longer effective, Locator Mapping provides a way to replace or update these locators.
+
+For example, if the existing locator mapped in the Object repository file for an Email ID isn't working after a recent change to an application, then you can perform the following steps:
+
+<Steps>
+  <Step title="Step 1" title-type="p">
+    On the Left Pane, navigate to the Object Repository.
+  </Step>
+
+  <Step title="Step 2" title-type="p">
+    Click on Locator Mapping which is available in top right corner.
+
+    <Image src="https://s3-ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/1070046264227/original/jq51mL299YLvgz-iqUmuUUBdsZ_X8uwnZQ.png?1785301875" width="1554" height="882" alt="Locator Mapping option in the Object Repository" />
+  </Step>
+
+  <Step title="Step 3" title-type="p">
+    The Locator Mapping screen appears. In this screen, click the 'cloud' icon to upload the scraped file in the .json format or you can drag and drop the scraped file.
+
+    <Callout kind="info" collapsed="false">
+      Search functionality: If you have uploaded a large .json file and wish to search for a required UI element, you can use search functionality.
+    </Callout>
+
+    <Image src="https://s3-ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/1070046264333/original/D9zLRdN9-EVxcipBs_iSe15QuPaNUbtg6Q.png?1785301957" width="1176" height="465" alt="Locator Mapping search functionality" />
+
+    Ensure to upload a .json file with all the scraped UI element details.
+  </Step>
+
+  <Step title="Step 4" title-type="p">
+    Here you'll see existing scraped file details from the Object Repository file and uploaded re-scraped file details in scraped file. In this screen, select the checkbox of the appropriate UI element name in the object repository file and select the matching UI element or elements with Control Type displayed in the Scraped file.
+
+    <Image src="https://s3-ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/1070046266746/original/3Bo3BQS7eaZDcxmdvbTT6uFMg8ublpXMIA.png?1785303702" width="1554" height="586" alt="Object Repository and Scraped file details" />
+
+    <Callout kind="info" collapsed="false">
+      Note: Click Remove button on the top if you wish to replace and add a new scraped file. You can also search for a particular UI element in the search bar. If you use invalid values in the search bar in the Re-scraped file details pane and Object Repository file details pane, you will see following error messages: Ensure that your search criteria are accurate and relevant to the data you're trying to retrieve.
+    </Callout>
+  </Step>
+
+  <Step title="Step 5" title-type="p">
+    Click the icon to view the updated locator information and if you wish to remove updated locator information, then click minus icon.
+
+    <Image src="https://s3-ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/1070004008358/original/PUc-JUoEk1he8NIIGG7phA-5fMtduymi5g.png?1706782101" width="43" height="37" alt="Updated locator information controls" />
+  </Step>
+
+  <Step title="Step 6" title-type="p">
+    Click the save icon to view the changes in the Object Repository file and corresponding locator information in the Node configuration.
+  </Step>
+
+  <Step title="Step 7" title-type="p">
+    Navigate to Object Repository in left pane to view the updated locator information.
+  </Step>
+
+  <Step title="Step 8" title-type="p">
+    To access Controls, navigate to the appropriate Node in canvas and click on the node to view Control. In this window, appropriate locator information will be updated.
+  </Step>
+
+  <Step title="Step 9" title-type="p">
+    In the Test Design feature, you have the option to assign an alias name to a UI element and update its associated Locator information using this feature. Note that any changes you make will only affect the UI element associated with the alias name in the Object Repository. The original XPath expression for the UI element remains unchanged in Node Configuration and Object Repository.
+
+    <Callout kind="info" collapsed="false">
+      Note: The Locator mapping feature is specific to the UI elements name, type, and Locator expression. For example, when multiple controls share the same UI element name but different XPaths or UI element types, and if you map an XPath to one of these UI elements in the Locator Mapping feature, the XPath will be updated for that particular UI element with its specific UI element type and XPath. The XPaths of other UI elements with the same name but different XPath expressions or UI element types remain unchanged.
+    </Callout>
+  </Step>
+</Steps>
+
