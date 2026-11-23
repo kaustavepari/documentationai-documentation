@@ -1,8 +1,15 @@
 {
   "name": "Starter Kit",
   "fonts": {
-    "heading": { "family": "playfair display" },
-    "body": { "family": "Poppins" }
+    "heading": {
+      "family": "Aboreto"
+    },
+    "body": {
+      "family": "Abril Fatface"
+    },
+    "code": {
+      "family": "Iosevka Charon Mono"
+    }
   },
   "colors": {
     "light": {
