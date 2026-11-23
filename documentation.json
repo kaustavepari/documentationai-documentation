@@ -1,7 +1,7 @@
 {
   "name": "Starter Kit",
   "fonts": {
-    "heading": { "family": "poppins" },
+    "heading": { "family": "playfair display" },
     "body": { "family": "Poppins" }
   },
   "colors": {
