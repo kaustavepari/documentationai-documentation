@@ -1,5 +1,9 @@
 {
   "name": "Starter Kit",
+  "fonts": {
+    "heading": { "family": "poppins" },
+    "body": { "family": "Poppins" }
+  },
   "colors": {
     "light": {
       "brand": "#F97316"
