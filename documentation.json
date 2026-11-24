@@ -567,10 +567,10 @@
       "family": "Playfair Display"
     },
     "body": {
-      "family": "Source Sans 3"
+      "family": "Poppins"
     },
     "code": {
-      "family": "Geist Mono"
+      "family": "Fira Code"
     }
   }
 }
