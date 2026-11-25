@@ -561,7 +561,7 @@
     },
     "copyright": "© 2026 Starter Kit, Inc. All rights reserved."
   },
-  "template": "atlas",
+  "template": "classic",
   "errors": {
     "404": "page-not-found"
   },
@@ -586,6 +586,6 @@
       "light": "#f3eee4",
       "dark": "#0f1b2d"
     },
-    "decoration": "windows"
+    "decoration": "grid"
   }
 }
