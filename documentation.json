@@ -582,10 +582,10 @@
     "dark": "https://test-dai.imgix.net/org-c25d6fdc-85fd-46d6-85a9-a05b52e047c4/doc-ec419c28-dd19-4573-8d2d-f249c75df1f6/1795609241627-envxbe8clr-favicon-dark.png?fm=auto&auto=compress%2Cformat"
   },
   "background": {
-    "decoration": "grid",
     "color": {
       "light": "#f3eee4",
       "dark": "#0f1b2d"
-    }
+    },
+    "decoration": "windows"
   }
 }
