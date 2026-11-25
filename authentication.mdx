@@ -2,29 +2,26 @@
 title: Authentication (Sample)
 description: Sample guidance for authentication and OpenAPI usage.
 ---
-
 ## Overview
 
 This is sample content. Replace tokens, URLs, headers, and flows with your real authentication requirements.
 
-<Callout kind="info">
-
-This site ships with placeholder content for authentication. Update this page and `openapi.yaml` to match your real API before sharing with users.
-
+<Callout kind="info" collapsed="false">
+  This site ships with placeholder content for authentication. Update this page and `openapi.yaml` to match your real API before sharing with users.
 </Callout>
 
 This API uses OpenAPI to describe endpoints, parameters, and responses. The reference is generated from `openapi.yaml`, so keep that file up to date as your API evolves.
 
 ## Authentication
 
-Use a bearer token in the `Authorization` header for authenticated requests. Replace the base URL and token with values for your own API.
+Use a <Tooltip tip="A secret token sent with each request to prove who is calling. Keep it out of client-side code." headline="Bearer token" cta="Get a token" href="/quickstart">bearer token</Tooltip> in the `Authorization` header for authenticated requests. Replace the base URL and token with values for your own API.
 
 ```bash
 curl https://api.example.com/v1/example \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
-<ParamField header="Authorization" param-type="string" required="true">
+<ParamField header="Authorization" param-type="string" required="true" deprecated="false" show-location="true">
   `Bearer YOUR_TOKEN`
 </ParamField>
 
@@ -47,11 +44,10 @@ Use the API Reference to explore endpoints, required parameters, and example res
 ## Common mistakes
 
 <Expandable title="Why am I getting a 401?" default-open="false">
+  Verify that:
 
-Verify that:
-
-- The token is valid and not expired.
-- The token is sent in the `Authorization` header.
-- The header value includes the `Bearer` prefix and a space before the token.
-
+  - The token is valid and not expired.
+  - The token is sent in the `Authorization` header.
+  - The header value includes the `Bearer` prefix and a space before the token.
 </Expandable>
+

@@ -107,6 +107,10 @@
                     "title": "Authentication",
                     "path": "authentication",
                     "icon": "lock"
+                  },
+                  {
+                    "title": "API tokens",
+                    "path": "api-tokens"
                   }
                 ]
               },
