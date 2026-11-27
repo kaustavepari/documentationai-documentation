@@ -1,0 +1,136 @@
+asyncapi: 3.0.0
+info:
+  title: Chat API
+  version: 1.0.0
+  description: Realtime chat rooms.
+servers:
+  production:
+    host: api.example.com
+    protocol: wss
+    description: Production
+    security:
+      - $ref: '#/components/securitySchemes/apiKey'
+      - $ref: '#/components/securitySchemes/bearer'
+  echo:
+    host: ws.postman-echo.com
+    protocol: wss
+    description: Postman's public echo server, which sends back what it receives
+channels:
+  chatRoom:
+    title: Chat room
+    address: /rooms/{roomId}
+    description: Messages in one chat room.
+    tags:
+      - name: Chat
+    parameters:
+      roomId:
+        description: The room to join.
+    messages:
+      postMessage:
+        $ref: '#/components/messages/postMessage'
+      newMessage:
+        $ref: '#/components/messages/newMessage'
+  status:
+    address: /status
+    messages:
+      statusUpdate:
+        $ref: '#/components/messages/statusUpdate'
+  echo:
+    title: Echo
+    address: /raw
+    description: Sends back every message it receives. Try it connects here for real.
+    servers:
+      - $ref: '#/servers/echo'
+    tags:
+      - name: Tools
+    messages:
+      ping:
+        $ref: '#/components/messages/ping'
+operations:
+  receivePost:
+    action: receive
+    channel:
+      $ref: '#/channels/chatRoom'
+    messages:
+      - $ref: '#/channels/chatRoom/messages/postMessage'
+  broadcastNew:
+    action: send
+    channel:
+      $ref: '#/channels/chatRoom'
+    messages:
+      - $ref: '#/channels/chatRoom/messages/newMessage'
+  sendStatus:
+    action: send
+    channel:
+      $ref: '#/channels/status'
+    messages:
+      - $ref: '#/channels/status/messages/statusUpdate'
+  sendPing:
+    action: send
+    channel:
+      $ref: '#/channels/echo'
+    messages:
+      - $ref: '#/channels/echo/messages/ping'
+  receivePing:
+    action: receive
+    channel:
+      $ref: '#/channels/echo'
+    messages:
+      - $ref: '#/channels/echo/messages/ping'
+components:
+  securitySchemes:
+    apiKey:
+      type: httpApiKey
+      name: api_key
+      in: query
+      description: Your API key.
+    bearer:
+      type: http
+      scheme: bearer
+      description: A token from the dashboard.
+  messages:
+    postMessage:
+      name: postMessage
+      title: Post a message
+      summary: Send a message to the room.
+      payload:
+        type: object
+        required:
+          - text
+        properties:
+          text:
+            type: string
+            description: The message text.
+      examples:
+        - payload:
+            text: Hello room
+    newMessage:
+      name: newMessage
+      title: New message
+      payload:
+        type: object
+        properties:
+          text:
+            type: string
+          from:
+            type: string
+    statusUpdate:
+      name: statusUpdate
+      title: Status update
+      payload:
+        type: object
+        properties:
+          online:
+            type: boolean
+    ping:
+      name: ping
+      title: Ping
+      summary: Any JSON; the server sends it straight back.
+      payload:
+        type: object
+        properties:
+          text:
+            type: string
+      examples:
+        - payload:
+            text: Hello echo

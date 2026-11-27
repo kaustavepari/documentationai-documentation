@@ -1,0 +1,321 @@
+---
+title: 1. Purpose
+---
+
+Documentation.AI
+
+Incident Response Plan
+
+**Version 0.1 draft** 
+
+|  |  |
+| --- | --- |
+| Parent policy | Incident Management Policy, Version 1.0 |
+| Related policy | Threat Intelligence Policy, Version 1.0 |
+| Plan owner | Incident Response Team |
+| Applies to | Keevs Health Inc & Keevs Health India Pvt Ltd |
+| Classification | Internal |
+| Status | Draft for review |
+
+This plan sets out how the Organization responds to information security incidents. It puts the Incident Management Policy into practice for Keevs Health Inc & Keevs Health India Pvt Ltd (herein referred to as the Organization), and it states how threat intelligence feeds, indicators of compromise and alerts feed into the response.
+
+# 2\. Scope
+
+This plan applies to:
+
+- All information security incidents affecting the Organization's information systems, IT assets and data, wherever the data is stored or transmitted.
+- Paperguide, Documentation.AI and corporate systems, all recorded in one Incident Register.
+- All employees, contractors, consultants and third parties.
+
+# 3\. References
+
+- Incident Management Policy, Version 1.0
+- Threat Intelligence Policy, Version 1.0
+- Threat Intelligence Procedure, Version 1.0
+- Patch & Vulnerability Management Policy, Version 1.0
+- Change Management Policy & Procedure, Version 1.0
+- Document Control Procedure, Version 1.0
+- Incident Register, How to Use It
+- Data Processing Addendum, section 12, and Terms of Service, section 17.3
+- CERT-In Directions No. 20(3)/2022-CERT-In of 28 April 2022, under section 70B(6) of the Information Technology Act, 2000
+- ISO/IEC 27001:2022, Annex A controls 5.24 to 5.28
+- NIST SP 800-61 Revision 3, Incident Response Recommendations and Considerations for Cyber Risk Management, April 2025
+
+# 4\. Definitions
+
+| Term | Definition |
+| --- | --- |
+| Event | An observable occurrence within a network or system, such as unusual login attempts or system errors (Incident Management Policy). |
+| Security event | An event indicating that a security policy may have been violated or a security safeguard may have failed (Incident Management Policy). |
+| Security incident | An event or series of events indicating unauthorized access, use, disclosure, modification or destruction of information, or interference with information systems operations, posing a threat to the Organization's security posture (Incident Management Policy). |
+| Information security incident | A suspected, attempted, successful or imminent threat of unauthorized access, use, disclosure, breach, modification or destruction of information; interference with IT operations; or significant violation of any information security-related policy (Incident Management Policy). |
+| Personal data breach | A data breach involving personal data or personally identifiable information of any living individual, including unauthorized sharing or disclosure without consent (Incident Management Policy). |
+| Threat intelligence item | A single advisory, alert, report or finding received from a source listed in section 6.2 of the Threat Intelligence Procedure. |
+| Indicator of compromise (IOC) | A technical sign that an attack may have taken place, such as a malicious IP address, domain or file (Threat Intelligence Procedure). |
+| Incident Register | The single register of incidents across Paperguide, Documentation.AI and corporate systems, kept in Notion. |
+| Security alerts channel and label | The private #security-alerts Slack channel and the "Security alerts" Gmail label in accounts@documentation.ai, where threat intelligence feeds arrive (Threat Intelligence Procedure). |
+
+# 5\. Roles and Responsibilities
+
+| Role | Responsibility |
+| --- | --- |
+| Executive Sponsor | Provides executive-level support and resources for this plan. Approves major decisions during incidents, including the availability of critical services and communication with external organizations. |
+| Information Security Group | Owns and implements the Incident Management Policy, monitors information systems for security events, coordinates with department heads and maintains records of incidents, responses and lessons learned. With Legal/Compliance, identifies applicable regulatory requirements. |
+| Incident Response Team (IRT) | Maintains and updates this plan, coordinates training and testing, manages the overall response and identifies and communicates new information security threats. |
+| IRT Lead | Assesses severity and activates this plan. Coordinates the technical response, initiates third-party support, approves response decisions affecting business operations with the Executive Sponsor and ensures communication within the IRT and with stakeholders. |
+| IRT members | Carry out detection, analysis, containment, eradication and recovery tasks, collect and preserve evidence and keep detailed records of all actions taken. |
+| Client Services Contact | Notifies affected clients, provides regular updates, reports resolution and maintains the client contact list. |
+| All employees, contractors and third parties | Promptly report suspected or actual security events, follow security policies and procedures and cooperate with the IRT. |
+
+Appendix A names the people in these roles.
+
+# 6\. Incident Response Process
+
+The Organization manages incidents through the lifecycle in the Incident Management Policy: preparation; detection and analysis; containment, eradication and recovery; and post-incident activity.
+
+## 6.1 Preparation
+
+- The IRT keeps this plan and Appendix A current and makes sure both can be reached during an incident.
+- The IRT keeps access to the Incident Register, the monitoring platform and the administrative consoles and logs of the services in the Service Inventory. **TEAM DECISION 3: the Incident Management Policy names SIEM systems among the tools to have available. Record the outcome of the security logging tool discussion here.**
+- The Client Services Contact keeps the client contact list in the company document repository folder.
+- Training and exercises follow section 10.
+
+## 6.2 Detection and Reporting
+
+An incident can start from any of the inputs below. Threat intelligence feeds, indicators of compromise and alerts are inputs to this plan alongside reports from people.
+
+| Input | Examples | How it reaches the IRT |
+| --- | --- | --- |
+| Threat intelligence feeds | CISA Known Exploited Vulnerabilities, CISA Cybersecurity Advisories, CERT-In, Node.js security releases, Vercel Security Bulletins, SANS Internet Storm Center | Security alerts channel and label, assessed under the Threat Intelligence Procedure |
+| Indicators of compromise | Malicious IP addresses, domains or files named in a threat intelligence item or a provider notice | Searched for in logs by the IRT (section 7) |
+| Monitoring and security alerts | Better Stack alerts, GitHub Dependabot alerts | Raised by the tool to the IRT |
+| Provider notices | Security notices from Render, Vercel, Supabase, Clerk and Cloudflare | Forwarded to the IRT by account owners |
+| Security testing | Penetration test reports, code review findings | Recorded under the Threat Intelligence Procedure |
+| Threat hunting | Findings from hunts carried out under the Threat Intelligence Policy | Escalated to the IRT Lead |
+| Log analysis and meetings | Evidence in operating system, application or network logs; incidents raised in regular meetings; unusual system behavior | Raised to the IRT by whoever notices it |
+| Reports from people | Employees, contractors, clients and vendors | See below |
+
+When a threat intelligence item shows that a threat has been used against the Organization, the IRT escalates it to the IRT Lead under this plan and records it in the Incident Register, as section 6.6 of the Threat Intelligence Procedure requires. An item that only shows a vulnerability, with no sign that it was used against the Organization, stays under the Patch & Vulnerability Management Policy.
+
+Anyone who suspects an incident creates a row in the Incident Register and tells the IRT Lead by Slack message or phone call, using the phone if Slack itself may be compromised. They do not wait for certainty or ask permission first. The row records the incident, the time it was detected, who reported it, the product, the category and a first-guess severity, with status Open. People outside the Organization report security issues to the support email address in the Privacy Policy.
+
+## 6.3 Analysis, Severity and Declaration
+
+- IRT members immediately investigate security events that indicate a security incident may have occurred or is underway, and keep a detailed written timeline of events.
+- The IRT determines whether the event qualifies as a security incident. False alarms stay in the Incident Register under the False alarm category.
+- An IRT member who suspects an incident immediately escalates it to the IRT Lead.
+- The IRT Lead assesses severity and potential impact and decides whether to activate this plan.
+
+Severity is assessed against confidentiality, integrity and availability, using the categories in the Incident Management Policy:
+
+| Category | Impact |
+| --- | --- |
+| Low | Minor unauthorized access to non-sensitive data, limited alteration of non-critical data, or brief downtime of non-essential systems. |
+| Moderate | Unauthorized access to sensitive or proprietary information, significant alteration of critical data, or prolonged downtime of key systems. |
+| High | Massive unauthorized disclosure of highly sensitive information, severe corruption or destruction of mission-critical data, or total or near-total outage of essential services. |
+
+The IRT Lead activates this plan for any incident of Moderate or High severity, and for any incident where customer or personal data may be involved. These criteria cover the incident's severity, impact and potential legal or regulatory implications. The IRT Lead then notifies stakeholders and assembles the IRT under section 8. Other Low severity incidents are handled and recorded in the Incident Register.
+
+If personal data may be involved, the person handling the incident ticks "Personal data involved" in the Incident Register as soon as it looks plausible, without waiting for confirmation. The notification deadline is then set to the detection time plus 72 hours, and section 8.3 applies.
+
+## 6.4 Containment, Eradication and Recovery
+
+The IRT Lead, or an IRT member they assign, works through the steps below, using the matching playbook in Appendix C, and updates the Containment actions field in the Incident Register during the work.
+
+| Step | Action |
+| --- | --- |
+| Preserve evidence | Acquire, preserve, secure and document evidence. Save a copy of the relevant logs before making changes. If legal action is possible, the IRT Lead coordinates with the Executive Sponsor on engaging qualified consultants or certified digital forensic experts. |
+| Short-term containment | Immediately isolate affected systems to prevent further damage. |
+| Long-term containment | Maintain isolation while preparing for eradication and recovery. |
+| Eradication | Remove the root cause, identify and mitigate every vulnerability that was exploited and confirm no remnants of the threat remain. Patches follow the Patch & Vulnerability Management Policy and configuration changes follow the Change Management Policy & Procedure. If more affected systems are found, repeat detection and analysis for them, then contain and eradicate. |
+| Recovery | Restore affected systems and data from clean backups, validate their integrity and functionality and restore normal operations gradually while monitoring for signs of recurrence. Add monitoring for related activity if necessary. |
+| Business decisions | The IRT Lead and Executive Sponsor approve response decisions affecting business operations, including the availability of critical services. |
+
+## 6.5 Post-Incident Activity
+
+- For all incidents involving the IRT, a post-incident analysis meeting is held within one week of closing the incident to share details and identify lessons learned.
+- The IRT carries out a root cause analysis and develops corrective and preventive actions.
+- Root cause, corrective actions and lessons learned are completed in the Incident Register before the status moves to Closed. Each corrective action links to a ticket.
+- The incident report in Appendix D of the Incident Management Policy is completed for internal and external stakeholders as required.
+- The review also evaluates compliance obligations, reporting effectiveness and evidence handling.
+- This plan and its playbooks are updated, and lessons learned are fed back into the threat intelligence process (section 7).
+
+# 7\. Threat Intelligence in Incident Response
+
+The Threat Intelligence Policy requires threat intelligence to be integrated into incident response procedures. The table states where it is used.
+
+| Stage | Use of threat intelligence |
+| --- | --- |
+| Detection | Threat intelligence feeds, indicators of compromise and alerts are inputs under section 6.2. When an applicable item names indicators of compromise, the IRT searches the logs of the affected services for them and records the search and its result in the threat intelligence log. A match is escalated to the IRT Lead. |
+| Triage | The IRT uses the item, including affected versions and any confirmed exploitation such as a Known Exploited Vulnerabilities listing, to assess severity and priority. |
+| Containment | The IRT applies relevant mitigations and workarounds named in advisories from vendors and agencies. |
+| Analysis and attribution | Indicators of compromise and attacker tactics, techniques and procedures support attack analysis and attribution during the investigation. |
+| Recovery | Threat intelligence informs recovery planning by identifying critical risks, prioritizing system restoration and strengthening post-incident controls. |
+| Post-incident | Lessons learned are recorded in the threat intelligence log and used to update the intelligence requirements and sources, as section 6.7 of the Threat Intelligence Procedure states. |
+| Playbooks | The IRT updates the matching playbook in Appendix C when threat intelligence changes how an incident type should be handled. |
+| Exercises | The IRT Lead develops test scenarios from potential threats and emerging security trends. |
+
+# 8\. Communication
+
+Communication during an incident is efficient and confidential. During an ongoing technology breach, incident details are not communicated by email. The IRT communicates by phone and Slack, and by phone alone if Slack itself may be compromised.
+
+## 8.1 Internal Communication
+
+| Event | Communication |
+| --- | --- |
+| Suspected security incident | The IRT Lead communicates in person or by phone to assess the situation. |
+| Confirmed security incident | On confirmation by the IRT Lead, relevant management contacts are informed in person or by secure call. Specific details are discussed over secure channels. |
+| Incident updates | Unless otherwise approved by the Executive Sponsor, the IRT Lead gives the IRT hourly updates until the incident is resolved, by secure conference call or in person. |
+| Incident resolution | Once the incident is eradicated and normal operations resume, the IRT Lead sends a summary email with the final resolution to all IRT members. |
+| Post mortem | A post-incident analysis meeting within one week of closing the incident (section 6.5). |
+
+## 8.2 Clients
+
+| When | Action |
+| --- | --- |
+| Immediately after the IRT has assessed severity and potential client impact | The Client Services Contact notifies all potentially affected clients, outlining its severity and the actions to resolve the issue. |
+| Every 4 hours after the last client communication, until resolved | The Client Services Contact gives status updates to potentially impacted clients. |
+| Personal Data Breach affecting personal data processed for a customer | Notify the customer without undue delay, and in any event within 72 hours of becoming aware (Data Processing Addendum, section 12). The notice describes, to the extent known, the nature of the breach, the categories and approximate number of data subjects and records, the likely consequences and the measures taken or proposed. |
+| Security incident affecting Customer Content | Notify the customer without undue delay and give the information reasonably necessary for their own notification obligations (Terms of Service, section 17.3). |
+| Once resolved | The Client Services Contact reports resolution to clients. |
+
+## 8.3 Authorities and Other Parties
+
+The Executive Sponsor, with Legal/Compliance, determines notification obligations and documents each decision, including a decision not to notify, in the Incident Register.
+
+| Party | When | Source |
+| --- | --- | --- |
+| Data protection supervisory authority | Within 72 hours of becoming aware of a personal data breach, where the breach is likely to result in a risk to individuals | GDPR, Incident Register how-to |
+| Affected individuals | Where the breach is likely to result in a high risk to individuals | GDPR, Incident Register how-to |
+| CERT-In | Within 6 hours of noticing an incident of a type listed in Annexure I, by incident@cert-in.org.in or 1800-11-4949. The Point of Contact is Roop Reddy. | CERT-In Directions of 28 April 2022 |
+| Local law enforcement | If confidential information is involved in a data breach | Incident Management Policy |
+| Approved third-party forensics organization | If required, to support the internal investigation | Incident Management Policy |
+| HIPAA | Breach notification obligations apply in addition if the Organization processes PHI under a Business Associate Agreement. It holds no such agreements today. | Incident Register how-to |
+
+# 9\. Records
+
+| Record | Location | Owner |
+| --- | --- | --- |
+| Incident record, timeline, containment actions, root cause, corrective actions, lessons learned and notification decisions | Incident Register | Information Security Group |
+| Evidence collected during an incident | Secure, centralized repository accessible only to authorized personnel | IRT |
+| Threat intelligence items and the searches run for them | Threat intelligence log | IRT |
+| Client contact list | Company document repository folder | Client Services Contact |
+
+Rows in the Incident Register are never deleted, are written while the incident is happening and include false alarms and low-severity events. The register is exported to CSV each quarter, and documentation is archived in line with the Organization's retention policies.
+
+# 10\. Training, Testing and Review
+
+- All employees, contractors and third parties take yearly security awareness training, which covers the incident response protocols.
+- IRT members and other key roles receive role-specific training.
+- The IRT holds group review sessions of this plan, and uses realistic scenarios to train for different incident types.
+- Incident response exercises, including tabletop exercises, are conducted annually. A debrief follows each exercise, and action items are assigned and tracked.
+- An actual incident handled under this plan counts as a test of the plan and is documented with its lessons learned.
+- The IRT, or approved delegates, meets at least annually to review, test and update this plan, including a check against applicable legal, regulatory and contractual requirements.
+- This plan is also updated after each incident, and changes are communicated to all relevant parties.
+- Approval, versioning and storage of this plan follow the Document Control Procedure.
+
+Appendix A. Contact Sheet
+
+| Incident response role | Name | Phone | Email |
+| --- | --- | --- | --- |
+| Executive Sponsor | Roop Reddy |  | roop@keevs.com |
+| IRT Lead | Roop Reddy |  | roop@keevs.com |
+| Client Services Contact | Roop Reddy |  | roop@keevs.com |
+| Legal/Compliance contact | Roop Reddy |  | roop@keevs.com |
+| CERT-In Point of Contact | Roop Reddy |  | roop@keevs.com |
+| Information Security Officer | Roop Kumar Reddy |  | roop@keevs.com |
+| IRT member | Akash Kedia |  | akash@keevs.com |
+| IRT member | Dhanunjaya Varma |  | dhanunjaya@keevs.com |
+| IRT member | Krishna Kaustav Epari |  | kaustav@keevs.com |
+| IRT member | Krishna Prakya |  | krishna@keevs.com |
+| IRT member | Mallik Gaddam |  | mallik@keevs.com |
+| IRT member | Monika B |  | monika@keevs.com |
+| IRT member | Prathap Kanukuntla |  | prathap@keevs.com |
+| IRT member | Ravi Teja Kandukuri |  | ravi@keevs.com |
+| IRT member | Satya Ranjan |  | satya@keevs.com |
+| IRT member | Shreeyati Yalal |  | shreeyati@keevs.com |
+| IRT member | Yashwanth Muddana |  | yashwanth@keevs.com |
+
+Appendix B. External Support
+
+| Party | Role | Contact |
+| --- | --- | --- |
+| CERT-In | National cyber incident response agency, India | incident@cert-in.org.in, 1800-11-4949 |
+| External incident response and forensics | Advanced evidence collection |  |
+| Law enforcement | Breach reporting |  |
+| Service provider security contacts | Support during an incident on their platform |  |
+
+Appendix C. Playbooks
+
+Each playbook follows section 6 and covers an incident type from the Incident Management Policy, plus one for threat intelligence. Every playbook starts by preserving evidence and creating the Incident Register row.
+
+## C.1 Threat intelligence item or indicator of compromise
+
+| Step | Action |
+| --- | --- |
+| Starts when | A threat intelligence feed, provider notice or alert matches a product, version, dependency, supplier or device the Organization uses, and there may be signs of use against the Organization. |
+| Investigate | Search the logs of the affected services for the indicators of compromise and attacker techniques in the item. Record what was searched, the period covered and the result. |
+| If nothing is found | Handle the item under the Threat Intelligence Procedure and record the outcome in the threat intelligence log. |
+| If there is a match | Escalate to the IRT Lead, record it in the Incident Register and continue with the playbook for the incident type. |
+| Contain and fix | Apply the mitigations in the advisory, then the permanent fix under the Patch & Vulnerability Management Policy. |
+| Afterwards | Link the Incident Register row and the threat intelligence log entry to each other. |
+
+## C.2 System compromise or intrusion
+
+| Step | Action |
+| --- | --- |
+| Starts when | Unauthorized server access, exploitation of a vulnerability, privilege escalation or a user exceeding their privilege level. |
+| Contain | Revoke the compromised credentials and sessions, suspend the accounts involved and take the affected service off the network if the Executive Sponsor and IRT Lead approve. |
+| Eradicate | Close the entry point, rotate secrets the attacker could have reached and review recent deployments and access changes. |
+| Recover | Redeploy from a known good version, restore data from a clean backup if needed and watch the service for recurrence. |
+
+## C.3 Malicious code
+
+| Step | Action |
+| --- | --- |
+| Starts when | A virus, Trojan, worm, ransomware or spyware infects a system, or attempts persist, including through phishing emails, infected downloads or compromised websites. |
+| Contain | Disconnect the affected device or service from the network, and revoke sessions and credentials used on it. |
+| Eradicate | Remove the malicious code and find how it got in. If it arrived through a software dependency, remove or replace the dependency. |
+| Recover | Rebuild the device or redeploy the service from a clean source and restore data from a clean backup. |
+
+## C.4 Loss, theft or missing assets
+
+| Step | Action |
+| --- | --- |
+| Starts when | A laptop, mobile device, removable storage or other IT resource holding sensitive information or PII is lost, stolen or missing. |
+| Contain | Revoke the sessions and credentials held on the device and rotate any secrets stored on it. |
+| Assess | Establish what data the device held and whether it was encrypted. If personal data may be involved, section 6.3 applies. |
+| Recover | Issue a replacement and restore the person's access once their credentials have been reset. |
+
+## C.5 Denial of service
+
+| Step | Action |
+| --- | --- |
+| Starts when | Intentional or unintentional attempts disrupt the availability of critical services, including DoS and DDoS attacks. |
+| Contain | Confirm the pattern in monitoring, apply rate limits and the provider's traffic protections and block the sources. Contact the provider if needed. |
+| Eradicate | Find what made the service exposed and fix it. |
+| Recover | Remove temporary restrictions gradually while monitoring availability. |
+
+## C.6 Information compromise
+
+| Step | Action |
+| --- | --- |
+| Starts when | Information is disclosed, accessed or transmitted to anyone who should not have it, including through unsecured channels or inadequate clearing of media. |
+| Contain | Stop the disclosure: remove public access, revoke shared links and credentials and rotate any exposed secrets. |
+| Assess | Establish what data was exposed, to whom, and for how long. If personal data may be involved, section 6.3 applies. |
+| Notify | Follow sections 8.2 and 8.3. |
+
+## C.7 Website defacement
+
+| Step | Action |
+| --- | --- |
+| Starts when | Website content, design or functionality is altered without authorization, including injected scripts or misleading content. |
+| Contain | Roll back to the last known good deployment or take the affected site offline if the Executive Sponsor and IRT Lead approve. |
+| Eradicate | Find how the change was made, close that path and rotate the credentials involved. |
+| Recover | Confirm the restored content is correct and monitor for further changes. |
+
+Version Details
+
+| Version | Version Date | Description of changes | Created By | Approved By | Published By |
+| --- | --- | --- | --- | --- | --- |
+| 0.1 draft | November 2, 2026 | Draft for team review | Krishna Kaustav Epari | Information Security Group (pending) | Not published |

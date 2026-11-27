@@ -1,0 +1,72 @@
+---
+title: Webhooks guide
+description: Get notified when something happens in your Northwind Payments account.
+---
+
+Webhooks tell your server when something happens in your **Northwind Payments** account, such as a successful charge or a refund. Each event is sent as an *HTTPS POST* with a JSON body, signed with your endpoint secret `whsec_…`. The full list of events is in the [event reference](https://example.com/docs/events).
+
+## Before you start
+
+- An account with the **Admin** role.
+- A public HTTPS endpoint that:
+
+  - answers within 10 seconds, and
+  - returns a `2xx` status for every event it accepts.
+- Your endpoint secret, from **Settings > Developers**.
+
+<Callout kind="info">
+  Test mode events never reach live endpoints. Create a separate endpoint for each mode.
+</Callout>
+
+## Create an endpoint
+
+1. Open **Settings > Developers > Webhooks**.
+2. Click **Add endpoint** and paste your URL.
+3. Choose the events to send:
+
+   - `charge.succeeded`
+   - `charge.refunded`
+4. Click **Save**, then copy the signing secret.
+
+*Figure 1. How an event reaches your endpoint.*
+
+## Verify the signature
+
+Every request carries a `Northwind-Signature` header. Compute the HMAC of the raw body and compare it with the header before you trust the event.
+
+```js
+import crypto from 'node:crypto';
+
+export function verify(rawBody, header, secret) {
+  const expected = crypto
+    .createHmac('sha256', secret)
+    .update(rawBody)
+    .digest('hex');
+  return crypto.timingSafeEqual(Buffer.from(expected), Buffer.from(header));
+}
+```
+
+> Always compare signatures with a constant-time function, never with `===`.
+
+### Signature header
+
+| Part | Example | Notes |
+| --- | --- | --- |
+| Timestamp | `t=1732608000` | Seconds since the epoch. |
+| Signature | `v1=5257a8…` | Hex-encoded HMAC-SHA256. |
+
+Reject any request whose timestamp is more than five minutes old.
+
+## Retries
+
+If your endpoint does not return a `2xx`, we retry the delivery for up to three days.[^1] After that the event is marked ~~pending~~ failed and shown in the dashboard.
+
+## Event types
+
+| Event | Sent when |
+| --- | --- |
+| `charge.succeeded` | A charge is captured. |
+| `charge.refunded` | A charge is fully or partly refunded. |
+| `payout.paid` | A payout reaches the bank. |
+
+[^1]: Retries back off exponentially, starting at one minute.
