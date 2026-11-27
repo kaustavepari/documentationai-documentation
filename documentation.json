@@ -92,6 +92,22 @@
                     "path": "test-step-settings"
                   }
                 ]
+              },
+              {
+                "group": "Chat events",
+                "pages": [],
+                "asyncapi": "api-reference/chat-click-through.yaml"
+              },
+              {
+                "group": "Countries API",
+                "pages": [],
+                "graphql": "api-reference/countries.graphql",
+                "graphql-endpoint": "https://countries.trevorblades.com/graphql"
+              },
+              {
+                "group": "Market data",
+                "pages": [],
+                "asyncapi": "https://raw.githubusercontent.com/asyncapi/spec/master/examples/websocket-gemini-asyncapi.yml"
               }
             ]
           },
